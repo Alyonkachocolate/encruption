@@ -16,7 +16,7 @@ string ciphertext(string s, unsigned int VI) {
     string cipher;
     int len = s.length();
     if (len % 2 != 0)
-        s[len] = 206;
+        s[len] = 206; // ╬
     int i = 0;
     while (i < len) {
         unsigned short cc = (unsigned short) s[i] << 8 | ((unsigned short) s[i + 1] & 0xFF);
@@ -40,7 +40,7 @@ string plaintext(string s, unsigned int VI) {
     std::default_random_engine random_number_generator(VI);
     string plaintext;
     int len = s.length();
-    if (len % 2 != 0) s[len] = 206;
+    if (len % 2 != 0) s[len] = 206; // ╬
     int i = 0;
     while (i < len) {
         unsigned short cc = ((unsigned short) s[i]) << 8 | ((unsigned short) s[i + 1] & 0xFF);
