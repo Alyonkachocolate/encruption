@@ -8,8 +8,10 @@ using std::endl;
 using std::string;
 using std::getline;
 
+//2 байта. Сдвиг на 4 вправо.
+
 string ciphertext(string s, unsigned int VI) {
-    std::uniform_int_distribution<> range{0, 0xFFF};
+    std::uniform_int_distribution<> range{0, 0xFF};
     std::default_random_engine random_number_generator(VI);
     string cipher;
     int len = s.length();
@@ -34,7 +36,7 @@ string ciphertext(string s, unsigned int VI) {
 
 
 string plaintext(string s, unsigned int VI) {
-    std::uniform_int_distribution<> range{0, 0xFFF};
+    std::uniform_int_distribution<> range{0, 0xFF};
     std::default_random_engine random_number_generator(VI);
     string plaintext;
     int len = s.length();
@@ -90,6 +92,5 @@ int main() {
         cout << "Check:" << endl << check;
 
     }
-    cout << "Result:" << res << endl;
     return 0;
 }
